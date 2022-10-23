@@ -21,7 +21,7 @@ export default function Login() {
 
   return (
     <div className="container-fluid">
-      <Form novalidate onSubmit={handleSubmit(submit)}>
+      <Form noValidate onSubmit={handleSubmit(submit)}>
         <Form.Group className="mb-3">
           <Form.Label>Email</Form.Label>
           <Form.Control

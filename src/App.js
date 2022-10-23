@@ -13,7 +13,6 @@ export default function App() {
       <Route path="about" element={<About />} />
       <Route path="register" element={<Register />} />
       <Route path="login" element={<Login />} />
-      <Route path="*" />
     </Routes>
   );
 }

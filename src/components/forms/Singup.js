@@ -21,6 +21,9 @@ export default function Singup() {
     password2: "",
   });
 
+  // Handle error message when submitting form.
+  const [errorMessage, setErrorMessage] = useState("");
+
   const submit = async (event) => {
     // prevent submitting form
     try {
@@ -40,9 +43,11 @@ export default function Singup() {
       // Throw error if result status is not 200
       if (!result.ok) throw new Error(data.message);
 
-      console.log(data);
+      //clear Error message
+      if (errorMessage.length > 0) setErrorMessage("");
     } catch (error) {
       console.log(error.message);
+      setErrorMessage(error.message);
     }
   };
 
@@ -149,6 +154,9 @@ export default function Singup() {
         <Button variant="primary" type="submit">
           Submit
         </Button>
+        <Form.Group>
+          <Form.Label className="small text-danger">{errorMessage}</Form.Label>
+        </Form.Group>
       </Form>
     </div>
   );
